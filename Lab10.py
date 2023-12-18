@@ -1,11 +1,10 @@
 from ultralytics import YOLO
 
-# Load an official or custom model
-model = YOLO('yolov8n.pt')  # Load an official Detect model
-model = YOLO('yolov8n-seg.pt')  # Load an official Segment model
-model = YOLO('yolov8n-pose.pt')  # Load an official Pose model
-model = YOLO('path/to/best.pt')  # Load a custom trained model
+# Load a YOLOv8 model. You can choose from different types of models like 'yolov8n.pt', 'yolov8n-seg.pt', 'yolov8n-pose.pt',
+# or use a custom trained model by specifying its path.
+model = YOLO('yolov8n.pt')  # This is an example of loading an official Detect model
 
-# Perform tracking with the model
-results = model.track(source="https://youtu.be/LNwODJXcvt4", show=True)  # Tracking with default tracker
-results = model.track(source="https://youtu.be/LNwODJXcvt4", show=True, tracker="bytetrack.yaml")  # Tracking with ByteTrack tracker
+# Perform tracking with the model. You can specify the source as a video file path or a URL.
+# The 'show=True' argument will display the output.
+results = model.track(source="traffic.mp4", show=True)  # Tracking with default tracker
+
